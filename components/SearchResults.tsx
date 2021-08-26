@@ -1,15 +1,21 @@
-interface ProductItemProps {
-  product: {
+import { ProducItem } from "./ProductItem"
+
+interface SearchResultsProps {
+  results: Array<{
     id: number;
     price: number;
     title: string;
-  }
+  }>
 }
 
-export function ProducItem( {product}: ProductItemProps ) {
+export function SearchResults( {results}: SearchResultsProps ) {
   return (
     <div>
-      {product.title} - <strong>{product.price}</strong>
+      {results.map(product => {
+        return (
+          <ProducItem product={product} />         
+        );
+      })}
     </div>
   )
 }
