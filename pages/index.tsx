@@ -1,5 +1,5 @@
 import { useState, FormEvent } from "react";
-import { SearchResults } from "../components/ProductItem";
+import { SearchResults } from "../components/SearchResults";
 
 export default function Home() {
   const [search, setSearch] = useState('');
