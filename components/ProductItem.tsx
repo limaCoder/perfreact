@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 interface ProductItemProps {
   product: {
     id: number;
@@ -13,3 +15,7 @@ export function ProducItem( {product}: ProductItemProps ) {
     </div>
   )
 }
+
+export const ProductItem = memo(ProducItem, (PrevProps, nextProps) => {
+  return Object.is(PrevProps.product, nextProps.product)
+})
